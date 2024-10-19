@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun VK - Cybersecurity Enthusiast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Change to a more modern font */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Dark text for better readability */
+            background-color: #f9f9f9; /* Light background */
+            overflow: hidden;
+            position: relative;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff6f61, #6fa3ef); /* Gradient background */
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00; /* Gold color for hover effect */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        section {
+            background: #ffffff; /* White background for sections */
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #ff6f61; /* Bright color for headers */
+        }
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .project {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 calc(30% - 20px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff6f61, #6fa3ef); /* Gradient background for footer */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Particle animation */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.8);
+            animation: move 10s linear infinite;
+            opacity: 0.7; /* Slightly transparent particles */
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(calc(100vw * var(--x)), calc(100vh * var(--y)));
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Create multiple particles with different colors */
+        .particle:nth-child(1) { width: 10px; height: 10px; top: 20%; left: 30%; --x: 1; --y: 1; animation-duration: 8s; background: #ff6f61; }
+        .particle:nth-child(2) { width: 15px; height: 15px; top: 40%; left: 50%; --x: 0.5; --y: 1.5; animation-duration: 12s; background: #6fa 3ef; }
+        .particle:nth-child(3) { width: 8px; height: 8px; top: 60%; left: 20%; --x: 1.2; --y: 0.8; animation-duration: 10s; background: #ffcc00; }
+        .particle:nth-child(4) { width: 12px; height: 12px; top: 80%; left: 60%; --x: 0.8; --y: 1.2; animation-duration: 9s; background: #33cc33; }
+        .particle:nth-child(5) { width: 18px; height: 18px; top: 10%; left: 40%; --x: 1.5; --y: 0.5; animation-duration: 11s; background: #66ccff; }
+        .particle:nth-child(6) { width: 10px; height: 10px; top: 50%; left: 70%; --x: 0.2; --y: 1.8; animation-duration: 13s; background: #ff99cc; }
+        .particle:nth-child(7) { width: 12px; height: 12px; top: 30%; left: 10%; --x: 1.8; --y: 0.2; animation-duration: 14s; background: #99ff99; }
+        .particle:nth-child(8) { width: 15px; height: 15px; top: 70%; left: 90%; --x: 0.3; --y: 1.9; animation-duration: 15s; background: #ff66cc; }
+        .particle:nth-child(9) { width: 8px; height: 8px; top: 20%; left: 80%; --x: 1.9; --y: 0.3; animation-duration: 16s; background: #33ff33; }
+        .particle:nth-child(10) { width: 18px; height: 18px; top: 40%; left: 20%; --x: 0.4; --y: 2; animation-duration: 17s; background: #66ff66; }
+        .particle:nth-child(11) { width: 10px; height: 10px; top: 60%; left: 50%; --x: 2; --y: 0.4; animation-duration: 18s; background: #ffccff; }
+        .particle:nth-child(12) { width: 12px; height: 12px; top: 80%; left: 10%; --x: 0.5; --y: 2.1; animation-duration: 19s; background: #99cc99; }
+        .particle:nth-child(13) { width: 15px; height: 15px; top: 10%; left: 70%; --x: 2.1; --y: 0.5; animation-duration: 20s; background: #ff66ff; }
+        .particle:nth-child(14) { width: 8px; height: 8px; top: 30%; left: 90%; --x: 0.6; --y: 2.2; animation-duration: 21s; background: #33ccff; }
+        .particle:nth-child(15) { width: 18px; height: 18px; top: 50%; left: 20%; --x: 2.2; --y: 0.6; animation-duration: 22s; background: #66ffcc; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arun VK</h1>
+        <p>Cybersecurity Enthusiast</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Arun VK, a cybersecurity enthusiast with a passion for protecting systems and networks from cyber threats. I enjoy exploring various aspects of cybersecurity, including ethical hacking, penetration testing, and security analysis. My goal is to contribute to a safer digital world.</p>
+        </section>
+
+        <section id="projects">
+            <h2>MyProjects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>Vulnerability Assessment Tool</h3>
+                    <p>A tool designed to identify vulnerabilities in systems and networks.</p>
+                </div>
+                <div class="project">
+                    <h3>Penetration Testing Framework</h3>
+                    <p>A framework for simulating cyber attacks to test system defenses.</p>
+                </div>
+                <div class="project">
+                    <h3>Security Information and Event Management (SIEM) System</h3>
+                    <p>A system for monitoring and analyzing security-related data from various sources.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul class="skills-list">
+                <li class="skill">Ethical Hacking</li>
+                <li class="skill">Penetration Testing</li>
+                <li class="skill">Security Analysis</li>
+                <li class="skill">Network Security</li>
+                <li class="skill">Cybersecurity Frameworks</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out to me for any cybersecurity-related projects or collaborations.</p>
+            <ul>
+                <li><a href="mailto:arunvk@example.com"><i class="fas fa-envelope"></i> arunvk@example.com</a></li>
+                <li><a href="https://linkedin.com/in/arunvk"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Arun VK. All rights reserved.</p>
+    </footer>
+
+    <!-- Add particles to the background -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</body>
+</html>
